@@ -1,0 +1,26 @@
+<div class="row new_user_container">
+  <div class="col-md-6 col-md-offset-3">
+    <h1 class="margin-top-4">Create an event</h1>
+    <%= form_for(@event, url: yield(:url)) do |f| %>
+    <%= render 'shared/errors', object: @event %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :event_date %>
+      <%= f.datetime_select :event_date, class: 'form-control' %>
+      <br>
+
+      <%= f.label :description %>
+      <%= f.text_field :description, class: 'form-control' %>
+
+      <%= f.label :location %>
+      <%= f.text_field :location, class: 'form-control' %>
+
+      <%= f.label :category %>
+      <%= f.text_field :category, class: 'form-control' %>
+
+      <%= f.submit yield(:button_text), class: "btn btn-primary margin-top-4" %>
+    <% end %>
+  </div>
+</div>

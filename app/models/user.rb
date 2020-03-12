@@ -2,6 +2,8 @@
 
 # User model methods and constrains
 class User < ApplicationRecord
+  attr_accessor :rem_token
+  before_create :create_remember_token
   before_save { self.email = email.downcase }
 
   # Allows email validations for correct format
@@ -18,4 +20,17 @@ class User < ApplicationRecord
   has_many :attendances
   has_many :events, dependent: :destroy
   has_many :scheduled_events, through: :attendances, source: :event
+
+  def forget_me
+    update_attribute(:remember_token, nil)
+  end
+
+  def auth(token)
+    remember_token == token
+  end
+
+  def create_remember_token
+    rem_token = Digest::SHA1.hexdigest(SecureRandom.urlsafe_base64)
+    self.remember_token = rem_token
+  end
 end
