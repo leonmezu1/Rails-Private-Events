@@ -14,6 +14,8 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
 
   has_secure_password
+
   has_many :attendances
-  has_many :events, through: :attendances
+  has_many :events, dependent: :destroy
+  has_many :scheduled_events, through: :attendances, source: :event
 end
