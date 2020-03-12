@@ -14,4 +14,6 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
 
   has_secure_password
+  has_many :attendances
+  has_many :events, through: :attendances
 end
