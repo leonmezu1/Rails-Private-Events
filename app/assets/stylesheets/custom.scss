@@ -18,7 +18,9 @@
   color: white;
   font-family: 'Spartan', sans-serif;
   font-weight: bold;
-  font-size: 7rem;
+  font-size: 100px;
+  color: white;
+  margin-top: 100px;
 }
 
 .error-messages {
@@ -30,7 +32,7 @@
 .bannersubtext{
   color: white;
   font-family: 'Spartan', sans-serif;
-  font-size: 3rem;
+  font-size: 50px;
 }
 
 .masthead {
@@ -42,9 +44,19 @@
   background-repeat: no-repeat;
 }
 
+.home-banner {
+  height: 500px;
+  text-align: center;
+}
 
 .bg-image {
-  background-image: url("login.png");
+  background-image: url("banner.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-image2 {
+  background-image: url("loginimg.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -55,7 +67,7 @@
 }
 
 .posts-board, .posts-new {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .login-heading {
