@@ -1,19 +1,19 @@
-<div class="container-fluid sessions-new">
-  <div class="row no-gutter">
-    <div class="d-lg-flex col-lg-6 bg-image2 leftimg">
-      <%= image_tag("logo.png") %>
-    </div>
-      <div class="col-lg-6">
-        <div class="login d-flex align-items-center py-5">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-4">
-                <h3 class="login-heading mb-4">Welcome back!</h3>
-                <%= render 'sessions/login' %>
-              </div>
-            </div>
-          </div>
-        </div>
+<div class="container-fluid posts-new">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="d-lg-flex col-lg-12 bg-image2 leftimg text-center">
+        <br><br>
+        <%= image_tag("logo.png") %>
       </div>
     </div>
+    <div class="col-lg-6">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1 class="login-heading mb-4">Welcome back!</h1>
+          <%= render 'sessions/login' %>
+        </div>
+        <div class="col-lg-4"></div>
+      </div>
+    </div>
+  </div>
 </div>

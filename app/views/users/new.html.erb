@@ -1,4 +1,14 @@
-
-<% provide(:button_text, 'Create account') %>
+<% provide(:button_text, 'Join') %>
 <% provide(:url, new_user_path) %>
-<%= render 'formuser' %>
+
+<div class="container posts-new">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>Join the community!</h1>
+      <%= image_tag("navlogo.png") %>
+    </div>
+    <div class="col-lg-6">
+      <%= render 'formuser' %>
+    </div>
+  </div>
+</div>
