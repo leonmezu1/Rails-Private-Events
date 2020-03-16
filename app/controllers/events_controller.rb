@@ -5,6 +5,10 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  def index
+    @events = Event.all
+  end
+
   def create
     @event = current_user.events.build(event_params)
     if @event.save
@@ -38,7 +42,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :category, :loaction, :event_date)
+    params.require(:event).permit(:id, :name, :description, :category, :loaction, :event_date)
   end
 
   def set_event

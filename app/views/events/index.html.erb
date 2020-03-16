@@ -1,2 +1,16 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<div class="container-fluid">
+  <br><br>
+  <h1 class="whitetext" >Discover New events near you</h1>
+<% @events.each do |event| %>
+
+<div class="col-lg-1"></div>
+<div class="col-lg-3 emp-profile text-center">
+  <img src="https://www.fillmurray.com/300/150" alt="">
+  <h1><%= event.name %></h1>
+  <h3><%= event.event_date %></h3>
+  <h3><%= event.location %></h3>
+  <h4><%= event.description %></h4>
+  <%= link_to "Check event", events_path  %>
+</div>
+<% end %>
+</div>
