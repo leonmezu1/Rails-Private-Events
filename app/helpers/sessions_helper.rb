@@ -9,9 +9,7 @@ module SessionsHelper
   end
 
   def current_user
-    if cookies.permanent.signed[:user_id]
-      @current_user ||= User.find_by(id: cookies.permanent.signed[:user_id])
-    end
+    @current_user ||= User.find_by(id: cookies.permanent.signed[:user_id]) if cookies.permanent.signed[:user_id]
   end
 
   def current_user_check(current_user)

@@ -5,13 +5,18 @@
 
 
       <% @upcoming.each do |upcoming| %>
-        <img src="https://www.fillmurray.com/300/150" alt="">
-        <h1><%= upcoming.name %></h1>
-        <h3><%= upcoming.event_date %></h3>
-        <h3><%= upcoming.location %></h3>
-        <h4><%= upcoming.description %></h4>
-        <%= link_to "Check event", event_path(upcoming)  %>
+        <div class="bordered">
+          <img src="https://www.fillmurray.com/300/150" alt="">
+          <h1><%= upcoming.name %></h1>
+          <h3><%= upcoming.event_date %></h3>
+          <h3><%= upcoming.location %></h3>
+          <h4><%= upcoming.description %></h4>
+          <%= link_to "Check event", event_path(upcoming) %>
+          <br>
+          <br>
+        </div>
       <% end %>
+
 
 
     </div>
