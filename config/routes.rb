@@ -1,15 +1,16 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
+Rails.application.routes.draw do
   get '/signup', to: 'users#new'
-  post '/users/new',to: 'users#create'
+  post '/users/new', to: 'users#create'
   get '/profile', to: 'users#show'
 
   root 'static_pages#home'
 
-  get '/event', to: 'events#show'
+  get '/events', to: 'events#show'
   get '/create', to: 'events#new'
-  post '/create',to: 'events#create'
-  get '/events', to: 'events#index'
+  post '/create', to: 'events#create'
+  get '/index', to: 'events#index'
 
   post '/signup', to: 'users#create'
 

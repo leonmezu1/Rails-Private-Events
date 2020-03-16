@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Events controller
 class EventsController < ApplicationController
   def new
     @event = Event.new
@@ -14,15 +15,14 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.build(event_params)
     if @event.save
-      flash.now[:sucess] = "Event created"
-      redirect_to @event
+      flash.now[:sucess] = 'Event created'
+      redirect_to event_path(@event)
     else
       render 'new'
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def show
     @event = Event.find(params[:id])
@@ -44,10 +44,11 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:id, :name, :description, :category, :location, :event_date)
+    params.require(:event).permit(:id, :name, :description, :category,
+                                  :location, :event_date)
   end
 
   def set_event
-    @event = Event.find(params[:id])
+    @event = Event.find(event_params[:id])
   end
 end

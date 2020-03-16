@@ -2,27 +2,33 @@
   
     <div class="col-lg-7 emp-profile">
       <h1>upcoming events</h1>
+
+
       <% @upcoming.each do |upcoming| %>
         <img src="https://www.fillmurray.com/300/150" alt="">
         <h1><%= upcoming.name %></h1>
         <h3><%= upcoming.event_date %></h3>
         <h3><%= upcoming.location %></h3>
         <h4><%= upcoming.description %></h4>
-        <%= link_to "Check event", events_path  %>
-    </div>
+        <%= link_to "Check event", events_path(upcoming)  %>
       <% end %>
-    <div class="col-lg-1">
+
 
     </div>
-    <div class="col-lg-4 emp-profile">
+
+    <div class="col-lg-4 col-offset-1 emp-profile">
       <h1>Previous events</h1>
+
+
       <% @past.each do |past| %>
         <img src="https://picsum.photos/300/150" alt="">
         <h1><%= past.name %></h1>
         <h3><%= past.event_date %></h3>
         <h3><%= past.location %></h3>
         <h4><%= past.description %></h4>
-        <%= link_to "Check event", events_path  %><br><br>
+        <%= link_to "Check event", events_path(past)  %><br><br>
       <% end %>
+
+
     </div>
 </div>
