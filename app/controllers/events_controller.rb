@@ -7,6 +7,8 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @upcoming = Event.upcoming
+    @past = Event.past
   end
 
   def create
@@ -23,7 +25,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find_by(params[:id])
+    @event = Event.find(params[:id])
   end
 
   def update
@@ -42,7 +44,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:id, :name, :description, :category, :loaction, :event_date)
+    params.require(:event).permit(:id, :name, :description, :category, :location, :event_date)
   end
 
   def set_event

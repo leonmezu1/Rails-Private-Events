@@ -1,6 +1,20 @@
 <div class="container posts-new">
   <div class="row">
-    <h1>created by: <%= @event.user.username %></h1>
-    <h3>Event name: <%= @event.name %></h3>
+
+  </div>
+</div>
+
+<div class="container emp-profile">
+  <div class="row">
+    <div class="col-lg-8 bg-e">
+
+    </div>
+    <div class="col-lg-4">
+      <h3>created by: <%= @event.user.username %></h3>
+      <h1><%= @event.name %></h1>
+      <h3><%= @event.event_date %></h3>
+      <h3><%= @event.location %></h3>
+      <h4><%= @event.description %></h4>
+    </div>
   </div>
 </div>
