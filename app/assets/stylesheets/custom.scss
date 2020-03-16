@@ -23,6 +23,15 @@
   margin-top: 100px;
 }
 
+.spartan-font-bold {
+  font-family: 'Spartan', sans-serif;
+  font-weight: bold;
+}
+
+.spartan-font {
+  font-family: 'Spartan', sans-serif;
+}
+
 .error-messages {
   position: absolute;
   left: 1%;
@@ -47,6 +56,34 @@
 .home-banner {
   height: 500px;
   text-align: center;
+}
+
+.event-bg {
+  background-image: url("banner.jpg");
+  background-size: cover;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 150px;
+}
+
+.event-first-row {
+  margin-bottom: 10px;
+}
+
+.event-title {
+  margin-top: -20px;
+}
+
+.event-description {
+  background-color: firebrick;
+  color: white;
+  border-radius: 5px;
+  padding-left: 20px;
+}
+
+.event-container {
+  margin-bottom: 30px;
 }
 
 .bg-image {

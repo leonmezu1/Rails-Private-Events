@@ -2,7 +2,6 @@
 
 # Events controller
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[show edit update destroy]
   def new
     @event = Event.new
   end
@@ -25,7 +24,9 @@ class EventsController < ApplicationController
 
   def edit; end
 
-  def show; end
+  def show
+    @event = Event.find(params[:id])
+  end
 
   def update
     if @event.update(event_params)
