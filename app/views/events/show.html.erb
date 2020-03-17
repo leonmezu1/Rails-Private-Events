@@ -15,8 +15,12 @@
       <h3><%= @event.event_date %></h3>
       <h3><%= @event.location %></h3>
       <h4><%= @event.description %></h4>
-      <%= link_to schedule_event_event_path(@event), class: "btn btn-success", method: :post do %>
+      <% if logged_in? %>
+      <%= link_to schedule_event_event_path(@event), class: "btn btn-success", method: :post do %> Attend Event
       <% end %>
+      
+      <% end %>
+
     </div>
   </div>
 </div>
