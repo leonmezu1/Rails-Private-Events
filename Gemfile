@@ -55,7 +55,6 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console'
   # anywhere in the code.
-  gem 'rspec-rails'
 
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
@@ -68,6 +67,10 @@ group :development do
 end
 
 group :test do
+  # New gems
+  gem 'shoulda'
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
   # Add support for rails Rspec
   gem 'rspec-rails'
   # Adds support for Capybara system testing and selenium driver

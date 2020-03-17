@@ -1,5 +1,5 @@
 RSpec.describe Event, type: :model do
-  subject { Event.new(name: "newevent", description: "this is a new event", event_date: DateTime.now )}
+  subject { Event.new(name: "newevent", description: "this is a new event", event_date: '2020-03-17 12:00:00', user_id: 1 )}
   before { subject.save }
 
   it 'Name should exist' do
@@ -16,5 +16,13 @@ RSpec.describe Event, type: :model do
     subject.event_date = nil
     expect(subject).to_not be_valid
   end
+
+  context 'ActiveRecord associations' do
+    it 'belongs to tree' do
+      expect(Event.reflect_on_association(:user).macro).to be (:belongs_to)
+    end
+  end
+
+
 
 end

@@ -12,6 +12,16 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
+  it 'Email should have correct format' do
+    subject.email = 'foo.bar.com'
+    expect(subject).to_not be_valid
+  end
+
+  it 'Subject shpuld save with correct email' do
+    subject.email = 'foo@bar.com'
+    expect(subject).to be_valid
+  end
+
   it 'password should exist' do
     subject.password = nil
     expect(subject).to_not be_valid
@@ -43,4 +53,9 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
+  describe 'validations' do
+    it { should validate_presence_of(:username) }
+    it { should validate_presence_of(:email) }
+    it { should validate_presence_of(:password) }
+  end
 end
