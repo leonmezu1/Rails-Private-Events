@@ -7,4 +7,8 @@ class Event < ApplicationRecord
   has_many :attendees, through: :attendances, source: :user
   scope :past, -> { where('event_date < :current_time', current_time: DateTime.now) }
   scope :upcoming, -> { where('event_date >= :current_time', current_time: DateTime.now) }
+
+  def upcoming?
+    Event.upcoming.include?(self)
+  end
 end
