@@ -2,6 +2,7 @@
 
 # Events controller
 class EventsController < ApplicationController
+  # before_action :set_event, only: %i[show edit update destroy event_shedule]
   def new
     @event = Event.new
   end
@@ -28,6 +29,12 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def schedule_event
+    @event = Event.find(params[:id])
+    @event.attendees << current_user
+    redirect_to @event
+  end
+
   def update
     if @event.update(event_params)
       flash[:success] = 'Event updated succesfully!'
@@ -45,7 +52,7 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:id, :name, :description, :category,
-                                  :location, :event_date)
+                                  :location, :event_date, :attendees)
   end
 
   def set_event

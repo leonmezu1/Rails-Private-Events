@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'attendances/event_schedule'
   get '/signup', to: 'users#new'
   post '/users/new', to: 'users#create'
   get '/profile', to: 'users#show'
@@ -14,11 +15,20 @@ Rails.application.routes.draw do
 
   post '/signup', to: 'users#create'
 
+  resources :events do
+    member do
+      post :schedule_event
+      post :remove_event
+    end
+  end
+
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
+
   resources :users
-  resources :events, only: %i[new create index show]
+  resources :events
+  resources :attendances , except: %i[create new]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
