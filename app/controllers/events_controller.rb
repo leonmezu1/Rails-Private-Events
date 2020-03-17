@@ -16,7 +16,7 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.build(event_params)
     if @event.save
-      flash.now[:success] = 'Event created'
+      flash.now[:sucess] = 'Event created'
       redirect_to event_path(@event)
     else
       render 'new'
@@ -32,8 +32,7 @@ class EventsController < ApplicationController
   def schedule_event
     @event = Event.find(params[:id])
     @event.attendees << current_user
-    flash.now[:success] = 'Event attendance created'
-    redirect_to current_user
+    redirect_to @event
   end
 
   def update

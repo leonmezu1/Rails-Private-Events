@@ -29,14 +29,14 @@
     </div>
     <div class="col-md-4">
       <h1>Events to attend</h1>
-      <% @user.scheduled_events.upcoming.each do |scheduled| %>
+      <% @user.scheduled_events.each do |scheduled| %>
             <h3><%= scheduled.name %></h3>
             <p><%= scheduled.description %></p>
       <% end %>
     </div>
     <div class="col-md-4">
       <h1>Past events</h1>
-      <% @user.scheduled_events.past.each do |scheduled| %>
+      <% @user.scheduled_events.each do |scheduled| %>
             <h3><%= scheduled.name %></h3>
             <p><%= scheduled.description %></p>
       <% end %>
