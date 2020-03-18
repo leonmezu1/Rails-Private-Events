@@ -2,8 +2,9 @@
 
 Rails.application.routes.draw do
   get 'attendances/event_schedule'
+
   get '/signup', to: 'users#new'
-  post '/users/new', to: 'users#create'
+  post '/signup', to: 'users#create'
   get '/profile', to: 'users#show'
 
   root 'static_pages#home'
@@ -12,8 +13,6 @@ Rails.application.routes.draw do
   get '/create', to: 'events#new'
   post '/create', to: 'events#create'
   get '/index', to: 'events#index'
-
-  post '/signup', to: 'users#create'
 
   resources :events do
     member do

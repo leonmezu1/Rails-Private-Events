@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+
 RSpec.feature 'Attendance', type: :feature do
   context 'should attend event' do
     subject do
