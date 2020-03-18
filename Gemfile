@@ -68,6 +68,7 @@ end
 
 group :test do
   # New gems
+  gem 'database_cleaner'
   gem 'shoulda'
   gem 'shoulda-matchers'
   gem 'rails-controller-testing'

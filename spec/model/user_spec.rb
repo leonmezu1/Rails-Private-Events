@@ -27,11 +27,6 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'password confirmation' do
-    subject.password_confirmation = nil
-    expect(subject).to_not be_valid
-  end
-
   it 'Username should not be too short' do
     subject.username = 'un'
     expect(subject).to_not be_valid
@@ -56,6 +51,6 @@ RSpec.describe User, type: :model do
   describe 'validations' do
     it { should validate_presence_of(:username) }
     it { should validate_presence_of(:email) }
-    it { should validate_presence_of(:password) }
+    it { should have_secure_password }
   end
 end
