@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/leonmezu1/Rails-Private-Events">
-    <img src="app/assets/images/logo.png" alt="Logo" width="100" height="100">
+    <img src="app/assets/images/logo.png" alt="Logo" width="200">
   </a>
 
   <h3 align="center">iKoi: Private Events project on rails</h3>
@@ -55,13 +55,21 @@ A Rails app wich allows user to signup,login with secure passwordand view, atten
 * Friendly UI lets user logically access this features
 
 ### Screenshots
+Home
  ![Home](img/sc1.png)
+Login
  ![Login](img/sc4.png)
+Signup
  ![Signup](img/sc3.png)
+Events Index
  ![Events](img/sc2.png)
+User profile
  ![Profile](img/sc5.png)
+Create event
  ![Create](img/sc6.png)
+Event
  ![Event](img/sc7.png)
+ 
 ### Testing
 
 * Rspec model testing done for validation and associations
@@ -83,8 +91,6 @@ Additional Gems used
 
 
 ## Contact
-
-Project specfications link: [https://github.com/Usagib/rails_members_only](https://github.com/Usagib/rails_members_only)
 
 Eduardo Bonilla [https://github.com/UsagiB](https://github.com/UsagiB)
 
