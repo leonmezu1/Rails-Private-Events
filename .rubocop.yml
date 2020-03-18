@@ -8,6 +8,7 @@ AllCops:
     - "Gemfile"
     - "app"
     - "config"
+    - "spec/rails_helper.rb"
   DisplayCopNames: true
 
 Metrics/MethodLength:
