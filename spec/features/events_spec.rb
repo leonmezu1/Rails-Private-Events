@@ -1,8 +1,15 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
-RSpec.feature "Event", type: :feature do
-  context "Create new event" do
-    subject { User.new(username: "testname", email: "testing@usagi.com", password: "123456", password_confirmation: "123456")}
-    before {
+
+# rubocop: disable Metrics/BlockLength
+RSpec.feature 'Event', type: :feature do
+  context 'Create new event' do
+    subject do
+      User.new(username: 'testname', email: 'testing@usagi.com',
+               password: '123456', password_confirmation: '123456')
+    end
+    before do
       subject.save
       visit login_path
       within('form') do
@@ -10,9 +17,9 @@ RSpec.feature "Event", type: :feature do
         fill_in 'Password', with: '123456'
       end
       click_button 'Login'
-     }
+    end
 
-    scenario "should create new event" do
+    scenario 'should create new event' do
       visit create_path
       within('form') do
         fill_in 'Name', with: 'new event'
@@ -23,7 +30,7 @@ RSpec.feature "Event", type: :feature do
       click_button 'Create an event'
       expect(page).to have_content('new event')
     end
-
   end
-
 end
+
+# rubocop: enable Metrics/BlockLength

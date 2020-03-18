@@ -1,9 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
-RSpec.feature "Users", type: :feature do
-
-  context "create new user, signup" do
-
-    scenario "should create new user" do
+RSpec.feature 'Users', type: :feature do
+  context 'create new user, signup' do
+    scenario 'should create new user' do
       DatabaseCleaner.clean
       visit signup_path
       within('form') do
@@ -16,7 +16,7 @@ RSpec.feature "Users", type: :feature do
       expect(page).to have_content('Welcome EduardoTest1')
     end
 
-    scenario "should not create new user" do
+    scenario 'should not create new user' do
       visit signup_path
       within('form') do
         fill_in 'Username', with: 'EduardoTest'
@@ -28,5 +28,4 @@ RSpec.feature "Users", type: :feature do
       expect(page).to have_content('Password confirmation doesn\'t match')
     end
   end
-
 end
