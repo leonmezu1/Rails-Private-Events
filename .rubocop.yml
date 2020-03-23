@@ -8,6 +8,7 @@ AllCops:
     - "Gemfile"
     - "app"
     - "config"
+    - "spec/*"
   DisplayCopNames: true
 
 Metrics/MethodLength:
